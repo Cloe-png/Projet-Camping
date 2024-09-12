@@ -16,3 +16,11 @@ public class DatabaseConnection {
         }
     }
 }
+
+public class Utilisateur {
+    private String nom;
+    private String email;
+    private String motDePasse;
+    private boolean isAdmin;
+
+    // Constructeur, getters et setters
