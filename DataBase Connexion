@@ -8,4 +8,15 @@ public class DatabaseConnection {
         private static final String URL = "http://localhost/mysql/index.php?token=b623489e7096638f1789ac9f61538b89#PMAURL-1:db_structure.php?db=camping&table=&server=1&target=&token=b623489e7096638f1789ac9f61538b89";
         private static final String USER = "root";
         private static final String PASSWORD = " ";
+        public static Connection connect() {
+            Connection connection = null;
+            try {
+                connection = DriverManager.getConnection(URL, USER, PASSWORD);
+                System.out.println("Connexion réussie !");
+            } catch (SQLException e) {
+                System.out.println("Erreur de connexion : " + e.getMessage());
+            }
+            return connection;
+        }
+    }
 }
