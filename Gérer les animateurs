@@ -1,52 +1,53 @@
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 
-public class gereranimateur {
+public class FormController {
 
-    public void ajouterAnimateur(Animateur animateur) {
-        String query = "INSERT INTO animateurs (nom, prenom, mail, code_postal, rue_animateur, ville_animateur, num_tel) VALUES (?, ?, ?, ?, ?, ?, ?)";
-        try (Connection connection = DatabaseConnection.connect();
-             PreparedStatement stmt = connection.prepareStatement(query)) {
+    @FXML
+    private TextField nomField;
+    @FXML
+    private TextField prenomField;
+    @FXML
+    private PasswordField motDePasseField;
+    @FXML
+    private TextField mailField;
+    @FXML
+    private TextField codePostalField;
+    @FXML
+    private TextField rueField;
+    @FXML
+    private TextField villeField;
+    @FXML
+    private TextField numTelField;
+    @FXML
+    private Button createAccountButton;
 
-            stmt.setString(1, animateur.getNom());
-            stmt.setString(2, animateur.getPrenom());
-            stmt.setString(3, animateur.getMail());
-            stmt.setString(4, animateur.getCodePostal());
-            stmt.setString(5, animateur.getRue());
-            stmt.setString(6, animateur.getVille());
-            stmt.setString(7, animateur.getNumTel());
 
-            stmt.executeUpdate();
-            System.out.println("Animateur ajouté avec succès !");
-        } catch (SQLException e) {
-            System.out.println("Erreur lors de l'ajout de l'animateur : " + e.getMessage());
+    @FXML
+    private void handleCreateAccountButton() {
+        // Récupération des valeurs des champs
+        String nom = nomField.getText();
+        String prenom = prenomField.getText();
+        String motDePasse = motDePasseField.getText();
+        String mail = mailField.getText();
+        String codePostal = codePostalField.getText();
+        String rue = rueField.getText();
+        String ville = villeField.getText();
+        String numTel = numTelField.getText();
+
+
+        if (nom.isEmpty() || prenom.isEmpty() || motDePasse.isEmpty() || mail.isEmpty()) {
+            System.out.println("Veuillez remplir tous les champs obligatoires.");
+            return;
         }
-    }
-public List<Animateur> getAnimateurs() {
-                List<Animateur> animateurs = new ArrayList<>();
-                String query = "SELECT * FROM animateurs";
-                try (Connection connection = DatabaseConnection.connect();
-                     PreparedStatement stmt = connection.prepareStatement(query)) {
 
-                    ResultSet rs = stmt.executeQuery();
-                    while (rs.next()) {
-                        Animateur animateur = new Animateur(
-                                rs.getInt("id_animateur"),
-                                rs.getString("nom"),
-                                rs.getString("prenom"),
-                                rs.getString("mail"),
-                                rs.getString("code_postal"),
-                                rs.getString("rue_animateur"),
-                                rs.getString("ville_animateur"),
-                                rs.getString("num_tel")
-                        );
-                        animateurs.add(animateur);
-                    }
-                } catch (SQLException e) {
-                    System.out.println("Erreur lors de la récupération des animateurs : " + e.getMessage());
-                }
-                return animateurs;
+        Animateur animateur = new Animateur(nom, prenom, mail, codePostal, rue, ville, numTel);
+
+        GererAnimateur gestion = new GererAnimateur();
+        gestion.ajouterAnimateur(animateur);
+
+        System.out.println("Compte animateur créé avec succès !");
+    }
+}
