@@ -26,3 +26,27 @@ public class gereranimateur {
             System.out.println("Erreur lors de l'ajout de l'animateur : " + e.getMessage());
         }
     }
+public List<Animateur> getAnimateurs() {
+                List<Animateur> animateurs = new ArrayList<>();
+                String query = "SELECT * FROM animateurs";
+                try (Connection connection = DatabaseConnection.connect();
+                     PreparedStatement stmt = connection.prepareStatement(query)) {
+
+                    ResultSet rs = stmt.executeQuery();
+                    while (rs.next()) {
+                        Animateur animateur = new Animateur(
+                                rs.getInt("id_animateur"),
+                                rs.getString("nom"),
+                                rs.getString("prenom"),
+                                rs.getString("mail"),
+                                rs.getString("code_postal"),
+                                rs.getString("rue_animateur"),
+                                rs.getString("ville_animateur"),
+                                rs.getString("num_tel")
+                        );
+                        animateurs.add(animateur);
+                    }
+                } catch (SQLException e) {
+                    System.out.println("Erreur lors de la récupération des animateurs : " + e.getMessage());
+                }
+                return animateurs;
