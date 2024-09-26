@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Jeu 12 Septembre 2024 à 12:19
+-- Généré le :  Jeu 26 Septembre 2024 à 13:18
 -- Version du serveur :  5.6.20-log
 -- Version de PHP :  5.4.31
 
