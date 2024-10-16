@@ -1,5 +1,6 @@
 # Projet-Camping
 Début du projet
 
-Ashley: Interface 
-Cloé: Protection identifiant / mdp
+
+Ashley: Création des interfaces, créer les DAO
+Cloé: crée les modèles, util, controller
