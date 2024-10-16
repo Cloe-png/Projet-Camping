@@ -51,7 +51,7 @@ public class AnimationsController implements Initializable {
 
         animationsTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
-                afficherDetailsAnimation(newSelection);
+                afficherDetailsAnimation((Animation) newSelection);
             }
         });
     }
@@ -77,7 +77,7 @@ public class AnimationsController implements Initializable {
     }
 
     private void modifierAnimation() {
-        Animation animationSelectionnee = animationsTable.getSelectionModel().getSelectedItem();
+        Animation animationSelectionnee = (Animation) animationsTable.getSelectionModel().getSelectedItem();
         if (animationSelectionnee != null) {
             animationSelectionnee.setLibelleAnimations(libelleField.getText());
             animationSelectionnee.setNomAnimation(nomField.getText());
@@ -93,7 +93,7 @@ public class AnimationsController implements Initializable {
     }
 
     private void supprimerAnimation() {
-        Animation animationSelectionnee = animationsTable.getSelectionModel().getSelectedItem();
+        Animation animationSelectionnee = (Animation) animationsTable.getSelectionModel().getSelectedItem();
         if (animationSelectionnee != null) {
             try {
                 animationDAO.supprimerAnimation(animationSelectionnee.getIdAnimation());
