@@ -132,7 +132,7 @@ public class AnimateursController implements Initializable {
     }
 
     private void modifierAnimateur() {
-        Animateur animateurSelectionne = animateursTable.getSelectionModel().getSelectedItem();
+        Animateur animateurSelectionne = (Animateur) animateursTable.getSelectionModel().getSelectedItem();
         if (animateurSelectionne != null) {
             animateurSelectionne.setNom(nomField.getText());
             animateurSelectionne.setPrenom(prenomField.getText());
@@ -152,7 +152,7 @@ public class AnimateursController implements Initializable {
     }
 
     private void supprimerAnimateur() {
-        Animateur animateurSelectionne = animateursTable.getSelectionModel().getSelectedItem();
+        Animateur animateurSelectionne = (Animateur) animateursTable.getSelectionModel().getSelectedItem();
         if (animateurSelectionne != null) {
             try {
                 if (!animateurDAO.animateurAAnimeActivite(animateurSelectionne.getIdAnimateur())) {
@@ -202,7 +202,7 @@ public class AnimateursController implements Initializable {
             .filter(animateur -> animateur.getNom().toLowerCase().contains(searchText) || 
                                 animateur.getPrenom().toLowerCase().contains(searchText))
             .collect(Collectors.toList());
-        animateursTable.setItems(FXCollections.observableArrayList(filteredAnimateurs));
+        animateursTable.setItems((com.example.tp_camping.controller.ObservableList<Animateur>) FXCollections.observableArrayList(filteredAnimateurs));
     }
 
     private void afficherNotification(String titre, String message) {
@@ -215,7 +215,7 @@ public class AnimateursController implements Initializable {
     }
 
     private void envoyerEmailAnimateur() {
-        Animateur animateurSelectionne = animateursTable.getSelectionModel().getSelectedItem();
+        Animateur animateurSelectionne = (Animateur) animateursTable.getSelectionModel().getSelectedItem();
         if (animateurSelectionne != null) {
             EmailService emailService = new EmailService();
             String to = animateurSelectionne.getMail();
