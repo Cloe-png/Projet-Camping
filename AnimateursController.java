@@ -82,7 +82,7 @@ public class AnimateursController implements Initializable {
 
         animateursTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
-                afficherDetailsAnimateur(newSelection);
+                afficherDetailsAnimateur((Animateur) newSelection);
             }
         });
 
@@ -95,7 +95,7 @@ public class AnimateursController implements Initializable {
         try {
             animateurs.clear();
             List<Animateur> listeAnimateurs = animateurDAO.getAllAnimateurs();
-            System.out.println("Nombre d'animateurs récupérés : " + listeAnimateurs.size()); // Débogage
+            System.out.println("Nombre d'animateurs récupérés : " + listeAnimateurs.size());
             if (listeAnimateurs != null && !listeAnimateurs.isEmpty()) {
                 animateurs.addAll(listeAnimateurs);
             } else {
