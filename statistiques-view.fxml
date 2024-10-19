@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp_camping.controller.StatistiquesController">
+    <children>
+        <Label text="Statistiques des Plannings" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+        <BarChart fx:id="barChart" prefWidth="600" prefHeight="400">
+            <xAxis>
+                <CategoryAxis fx:id="xAxis" label="Mois"/>
+            </xAxis>
+            <yAxis>
+                <NumberAxis fx:id="yAxis" label="Nombre de Plannings"/>
+            </yAxis>
+        </BarChart>
+    </children>
+</VBox>

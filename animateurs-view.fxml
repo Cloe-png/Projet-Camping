@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp_camping.controller.AnimateursController">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <HBox spacing="10">
+        <VBox spacing="5">
+            <Label text="Nom"/>
+            <TextField fx:id="nomField"/>
+        </VBox>
+        <VBox spacing="5">
+            <Label text="Prénom"/>
+            <TextField fx:id="prenomField"/>
+        </VBox>
+        <VBox spacing="5">
+            <Label text="Email"/>
+            <TextField fx:id="mailField"/>
+        </VBox>
+    </HBox>
+
+    <HBox spacing="10">
+        <VBox spacing="5">
+            <Label text="Code Postal"/>
+            <TextField fx:id="codePostalField"/>
+        </VBox>
+        <VBox spacing="5">
+            <Label text="Rue"/>
+            <TextField fx:id="rueField"/>
+        </VBox>
+        <VBox spacing="5">
+            <Label text="Ville"/>
+            <TextField fx:id="villeField"/>
+        </VBox>
+        <VBox spacing="5">
+            <Label text="Téléphone"/>
+            <TextField fx:id="telField"/>
+        </VBox>
+    </HBox>
+
+    <HBox spacing="10">
+        <Button fx:id="ajouterBtn" text="Ajouter"/>
+        <Button fx:id="modifierBtn" text="Modifier"/>
+        <Button fx:id="supprimerBtn" text="Supprimer"/>
+        <Button fx:id="envoyerEmailBtn" text="Envoyer Email" />
+    </HBox>
+
+    <HBox spacing="10">
+        <TextField fx:id="searchField" promptText="Rechercher..."/>
+        <Button fx:id="searchButton" text="Rechercher"/>
+    </HBox>
+
+    <TableView fx:id="animateursTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="nomColumn" text="Nom"/>
+            <TableColumn fx:id="prenomColumn" text="Prénom"/>
+            <TableColumn fx:id="mailColumn" text="Email"/>
+            <TableColumn fx:id="codePostalColumn" text="Code Postal"/>
+            <TableColumn fx:id="rueColumn" text="Rue"/>
+            <TableColumn fx:id="villeColumn" text="Ville"/>
+            <TableColumn fx:id="telColumn" text="Numéro de téléphone"/>
+        </columns>
+    </TableView>
+</VBox>

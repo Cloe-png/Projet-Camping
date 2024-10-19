@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp_camping.controller.LieuController">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <HBox spacing="10">
+        <VBox spacing="5">
+            <Label text="Libellé"/>
+            <TextField fx:id="libelleField"/>
+        </VBox>
+        <VBox spacing="5">
+            <Label text="Coordonnées"/>
+            <TextField fx:id="coordonnesField"/>
+        </VBox>
+    </HBox>
+
+    <HBox spacing="10">
+        <Button fx:id="ajouterBtn" text="Ajouter"/>
+        <Button fx:id="modifierBtn" text="Modifier"/>
+        <Button fx:id="supprimerBtn" text="Supprimer"/>
+    </HBox>
+
+    <TableView fx:id="lieuxTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="libelleColumn" text="Libellé"/>
+            <TableColumn fx:id="coordonnesColumn" text="Coordonnées"/>
+        </columns>
+    </TableView>
+</VBox>

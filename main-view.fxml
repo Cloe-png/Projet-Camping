@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane fx:id="mainTabPane" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp_camping.controller.MainController">
+    <tabs>
+        <Tab fx:id="animateursTab" text="Animateurs">
+            <content>
+                <fx:include source="animateurs-view.fxml"/>
+            </content>
+        </Tab>
+        <Tab fx:id="animationsTab" text="Animations">
+            <content>
+                <fx:include source="animations-view.fxml"/>
+            </content>
+        </Tab>
+        <Tab fx:id="planningTab" text="Planning">
+            <content>
+                <fx:include source="planning-view.fxml"/>
+            </content>
+        </Tab>
+        <Tab fx:id="lieuxTab" text="Lieux">
+            <content>
+                <fx:include source="lieux-view.fxml"/>
+            </content>
+        </Tab>
+        <Tab fx:id="utilisateursTab" text="Utilisateurs">
+            <content>
+                <fx:include source="utilisateurs-view.fxml"/>
+            </content>
+        </Tab>
+        <Tab fx:id="statistiquesTab" text="Statistiques">
+            <content>
+                <fx:include source="statistiques-view.fxml"/>
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>
