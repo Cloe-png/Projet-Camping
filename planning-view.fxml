@@ -1,36 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox spacing="10" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tp_camping.controller.PlanningController">
+<VBox prefHeight="531.0" prefWidth="476.0" spacing="10" style="-fx-background-color: #dce6b7;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="com.example.tp_camping.controller.PlanningController">
     <padding>
-        <Insets top="20" right="20" bottom="20" left="20"/>
+        <Insets bottom="20" left="20" right="20" top="20" />
     </padding>
 
     <HBox spacing="10">
         <VBox spacing="5">
-            <Label text="Date de début"/>
-            <DatePicker fx:id="dateDebutField"/>
+            <Label text="Date de début" />
+            <DatePicker fx:id="dateDebutField" />
         </VBox>
         <VBox spacing="5">
-            <Label text="Date de fin"/>
-            <DatePicker fx:id="dateFinField"/>
+            <Label text="Date de fin" />
+            <DatePicker fx:id="dateFinField" />
         </VBox>
     </HBox>
 
     <HBox spacing="10">
-        <Button fx:id="ajouterButton" text="Ajouter"/>
-        <Button fx:id="modifierButton" text="Modifier"/>
-        <Button fx:id="supprimerButton" text="Supprimer"/>
-        <Button fx:id="exporterButton" text="Exporter en CSV"/>
+        <Button fx:id="ajouterButton" text="Ajouter" />
+        <Button fx:id="modifierButton" text="Modifier" />
+        <Button fx:id="supprimerButton" text="Supprimer" />
+        <Button fx:id="exporterButton" text="Exporter en CSV" />
     </HBox>
 
     <TableView fx:id="planningsTable" VBox.vgrow="ALWAYS">
         <columns>
-            <TableColumn fx:id="dateDebutColumn" text="Date de début"/>
-            <TableColumn fx:id="dateFinColumn" text="Date de fin"/>
+            <TableColumn fx:id="dateDebutColumn" text="Date de début" />
+            <TableColumn fx:id="dateFinColumn" text="Date de fin" />
         </columns>
     </TableView>
 </VBox>
