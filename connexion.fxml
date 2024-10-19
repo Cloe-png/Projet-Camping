@@ -1,93 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
-
-    <right>
-        <AnchorPane prefHeight="696.0" prefWidth="462.0" style="-fx-background-color: #dce6b7;" BorderPane.alignment="CENTER">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="457.0" prefWidth="659.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+    <left>
+        <AnchorPane prefHeight="600.0" prefWidth="305.0" style="-fx-background-color: #dce6b7;" BorderPane.alignment="CENTER">
             <children>
-                <ImageView fitHeight="700.0" fitWidth="503.0" layoutX="6.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="457.0" fitWidth="327.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: #ffffff;">
                     <image>
                         <Image url="@../../../../resources/Picture/LogoCamping.png" />
                     </image>
                 </ImageView>
             </children>
         </AnchorPane>
-    </right>
-
-    <center>
-        <AnchorPane style="-fx-background-color: #dce6b7;" BorderPane.alignment="CENTER">
+    </left>
+    <right>
+        <AnchorPane prefHeight="457.0" prefWidth="348.0" style="-fx-background-color: #dce6b7;" BorderPane.alignment="CENTER">
             <children>
-                <Button layoutX="55.0" layoutY="575.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="308.0" style="-fx-background-color: #9a9292;" text="Je crée mon compte" textFill="WHITE" />
-
-                <Label layoutX="30.0" layoutY="14.0" prefHeight="30.0" prefWidth="198.0" text="Nom" textFill="BLACK">
+                <Button layoutX="73.0" layoutY="341.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="190.0" style="-fx-background-color: #9a9292;" text="Se connecter" textFill="WHITE">
                     <font>
-                        <Font name="DejaVu Serif Bold" size="14.0" />
+                        <Font size="16.0" />
+                    </font>
+                </Button>
+                <Label layoutX="97.0" layoutY="46.0" prefHeight="43.0" prefWidth="129.0" text="Connexion" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font name="DejaVu Sans Bold" size="24.0" />
+                    </font>
+                    <effect>
+                        <Glow />
+                    </effect>
+                </Label>
+                <Hyperlink layoutX="105.0" layoutY="378.0" prefHeight="29.0" prefWidth="125.0" text="Créer un compte" />
+                <PasswordField layoutX="49.0" layoutY="261.0" prefHeight="31.0" prefWidth="224.0" />
+                <Label layoutX="51.0" layoutY="215.0" text="Mot de passe" textFill="WHITE">
+                    <font>
+                        <Font name="DejaVu Serif Bold" size="18.0" />
                     </font>
                 </Label>
-                <TextField layoutX="28.0" layoutY="44.0" prefHeight="35.0" prefWidth="354.0" />
-
-                <Label layoutX="30.0" layoutY="79.0" prefHeight="30.0" prefWidth="198.0" text="Prénom" textFill="BLACK">
+                <Label layoutX="50.0" layoutY="120.0" text="Identifiant" textFill="WHITE">
                     <font>
-                        <Font name="DejaVu Serif Bold" size="14.0" />
+                        <Font name="DejaVu Serif Bold" size="18.0" />
                     </font>
                 </Label>
-                <TextField layoutX="28.0" layoutY="109.0" prefHeight="35.0" prefWidth="354.0" />
-
-                <Label layoutX="30.0" layoutY="144.0" prefHeight="30.0" prefWidth="198.0" text="Mot de passe" textFill="BLACK">
-                    <font>
-                        <Font name="DejaVu Serif Bold" size="14.0" />
-                    </font>
-                </Label>
-                <PasswordField layoutX="27.0" layoutY="174.0" prefHeight="35.0" prefWidth="354.0" />
-
-                <Label layoutX="30.0" layoutY="209.0" prefHeight="30.0" prefWidth="198.0" text="Email" textFill="BLACK">
-                    <font>
-                        <Font name="DejaVu Serif Bold" size="14.0" />
-                    </font>
-                </Label>
-                <TextField layoutX="27.0" layoutY="239.0" prefHeight="35.0" prefWidth="354.0" />
-
-                <Label layoutX="30.0" layoutY="274.0" prefHeight="30.0" prefWidth="198.0" text="Code Postal" textFill="BLACK">
-                    <font>
-                        <Font name="DejaVu Serif Bold" size="14.0" />
-                    </font>
-                </Label>
-                <TextField layoutX="27.0" layoutY="304.0" prefHeight="35.0" prefWidth="354.0" />
-
-                <Label layoutX="30.0" layoutY="350.0" prefHeight="30.0" prefWidth="198.0" text="Rue de résidence" textFill="BLACK">
-                    <font>
-                        <Font name="DejaVu Serif Bold" size="14.0" />
-                    </font>
-                </Label>
-                <TextField layoutX="27.0" layoutY="380.0" prefHeight="35.0" prefWidth="354.0" />
-
-                <Label layoutX="30.0" layoutY="412.0" prefHeight="30.0" prefWidth="198.0" text="Ville de résidence" textFill="BLACK">
-                    <font>
-                        <Font name="DejaVu Serif Bold" size="14.0" />
-                    </font>
-                </Label>
-                <TextField layoutX="27.0" layoutY="442.0" prefHeight="35.0" prefWidth="354.0" />
-
-                <Label layoutX="30.0" layoutY="477.0" prefHeight="35.0" prefWidth="212.0" text="Numéro de téléphone" textFill="BLACK">
-                    <font>
-                        <Font name="DejaVu Serif Bold" size="14.0" />
-                    </font>
-                </Label>
-                <TextField layoutX="28.0" layoutY="512.0" prefHeight="35.0" prefWidth="354.0" />
-
-                <Button layoutX="88.0" layoutY="634.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="239.0" style="-fx-background-color: #9a9292;" text="Retour" textFill="WHITE" />
+                <TextField layoutX="48.0" layoutY="163.0" prefHeight="31.0" prefWidth="223.0" />
             </children>
         </AnchorPane>
-    </center>
+    </right>
 </BorderPane>
-
