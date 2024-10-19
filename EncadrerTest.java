@@ -11,7 +11,6 @@ class EncadrerTest {
 
     @BeforeEach
     void setUp() {
-        // Initialisation de l'objet Encadrer pour les tests
         encadrer = new Encadrer(1, 100);
     }
 
